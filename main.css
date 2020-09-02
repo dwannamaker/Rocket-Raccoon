@@ -17,6 +17,7 @@ body{
     width: 100%;
     height: 350px;
     position: relative;
+    margin: auto;
   } 
 
   .raccoon {
@@ -26,6 +27,33 @@ body{
     position: absolute;
     top: 240px;
     left: 15%;
+  }
+
+  .obstacleCar {
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    position: absolute;
+    top: 300px;
+    left: 95%;
+  }
+
+  .obstacleTree {
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    position: absolute;
+    top: 300px;
+    left: 85%;
+  }
+
+  .obstacleDrone {
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    position: absolute;
+    top: 100px;
+    left: 95%;
   }
 
   /* .inner {
