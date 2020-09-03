@@ -20,40 +20,73 @@ body{
     margin: auto;
   } 
 
-  .raccoon {
-    height: 50px;
-    width: 50px;
+  #raccoon {
+    height: 35px;
+    width: 60px;
     background-color: fuchsia;
     position: absolute;
     top: 240px;
     left: 15%;
   }
 
-  .obstacleCar {
+  #car {
     height: 50px;
-    width: 50px;
+    width: 90px;
     background-color: blue;
     position: absolute;
     top: 300px;
-    left: 95%;
+    left: 0%;
+    animation: car 5s infinite linear;
   }
 
-  .obstacleTree {
+  #tree {
+    height: 100px;
+    width: 50px;
+    background-color: blue;
+    position: absolute;
+    top: 250px;
+    left: 0%;
+    animation: tree 5s infinite linear;
+
+  }
+
+  #drone {
     height: 50px;
     width: 50px;
     background-color: blue;
     position: absolute;
-    top: 300px;
-    left: 85%;
-  }
+    top: 150px;
+    left: 0%;
+    animation: drone 5s infinite linear;
 
-  .obstacleDrone {
+  }
+  #balloonMonkey {
     height: 50px;
     width: 50px;
     background-color: blue;
     position: absolute;
-    top: 100px;
-    left: 95%;
+    top: 200px;
+    left: 0%;
+    animation: balloonMonkey 5s infinite linear;
+  }
+
+  #airplane {
+    height: 50px;
+    width: 150px;
+    background-color: blue;
+    position: absolute;
+    top: 0px;
+    left: 0%;
+    animation: airplane 5s infinite linear;
+  }
+  #flyingPig {
+      height: 60px;
+      width: 75;
+      background-color: blue;
+      position: absolute;
+      top: 70px;
+      left: 0%;
+      animation: flyingPig 3s infinite linear;
   }
 
   /* .inner {
@@ -62,29 +95,53 @@ body{
     position: relative;
     animation: scroll 5s infinite linear;
     display: inline-block;
-  } */
+  }  */
+
 
 /*  
- 
  .inner:after {
     content: "";
-    height: 500%;
+    height: 350px;
     width: 100%;
     left: 0px;
     position: absolute;
     background-image: "/Users/admin/Desktop/DW Docs/Coding/Rocket Raccoon Project/Backgrounds/rrb5.png";
     background-size: 100% 20%;
   }
-  
+   */
   .img {
     width: 100%;
   }
   
   @keyframes scroll {
     from {transform: translateX(100%);}
-      to {transform: translateX(0%);}
+      to {transform: translateX(-50%);}
   
   } 
- */
+ 
 
-  
+  @keyframes car {
+    0%{left: 1000px}
+    100%{left: -50px}
+  }
+  @keyframes tree {
+    0%{left: 1000px}
+    100%{left: -50px}
+}
+  @keyframes drone {
+    0%{left: 1000px}
+    100%{left: -50px}
+}
+@keyframes balloonMonkey {
+    0%{left: 1000px}
+    100%{left: -50px}
+}
+  @keyframes airplane {
+    0%{left: 1000px}
+    100%{left: -50px}
+}
+  @keyframes flyingPig {
+    0%{left: 1000px}
+    100%{left: -50px}
+}
+
