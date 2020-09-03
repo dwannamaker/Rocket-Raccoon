@@ -29,17 +29,17 @@ body{
     left: 15%;
   }
 
-  #car {
+  .car {
     height: 50px;
     width: 90px;
     background-color: blue;
     position: absolute;
     top: 300px;
     left: 0%;
-    animation: car 5s infinite linear;
+    animation: car 3s linear;
   }
 
-  #tree {
+  /* #tree {
     height: 100px;
     width: 50px;
     background-color: blue;
@@ -87,7 +87,7 @@ body{
       top: 70px;
       left: 0%;
       animation: flyingPig 3s infinite linear;
-  }
+  } */
 
   /* .inner {
     width: 100%;
@@ -122,7 +122,7 @@ body{
 
   @keyframes car {
     0%{left: 1000px}
-    100%{left: -50px}
+    100%{left: -150px}
   }
   @keyframes tree {
     0%{left: 1000px}
