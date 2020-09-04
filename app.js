@@ -25,7 +25,7 @@ function checkKey(event) {
     if(event.originalEvent.keyCode === downArrow) {
     //    console.log("Hello! I am the DOWN arrow!")
     //    console.log($raccoon.position());
-        if(position < 300) {
+        if(position < $(".inner").height()-100) {
             $(".raccoon").css("top", `${position+=20}px`)
         }
     }
@@ -50,6 +50,9 @@ function getObsCoord() {
 
 
 function checkingCollision() {
+    if($(".car").length === 0) {
+    return false;
+    }
     const racPosition = $raccoon.position();
     const $car = $(".car").first();
 //        console.log($car);
@@ -72,17 +75,19 @@ const interval = setInterval(() => {
     console.log("checking for collisions")
      if(checkingCollision()){
          console.log("CRASH");
+        $(".car").remove();
+
     //    $(".container").freeze($(".container"));    
   //  alert ("CRASH - GAME OVER")
   //  document.location.reload();
-    clearInterval(interval);
-    clearInterval(movingCar);
-    $("body").off("keydown", checkKey);
+  //  clearInterval(interval);
+  //  clearInterval(movingCar);
+  //  $("body").off("keydown", checkKey);
     
 
 
 
-    
+
     }
 }, 100)
 
