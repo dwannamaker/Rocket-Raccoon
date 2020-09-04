@@ -48,53 +48,44 @@ function getObsCoord() {
 
 }
 
+
 function checkingCollision() {
     const racPosition = $raccoon.position();
-
     const $car = $(".car").first();
 //        console.log($car);
-
    // console.log(racPosition, $car);
-    
-    const testCollision = function($car) {
-        let carTop = $car.position().top;
-        let carLeft = $car.position().left;
-        let carBottom = carTop + $car.height();
-        let carRight = carLeft + $car.width();
-
-        let racTop = $raccoon.position().top;
-        let racLeft = $raccoon.position().left;
-        let racBottom = racTop + $raccoon.height();
-        let racRight = racLeft + $raccoon.width();
-
-   //         console.log(carTop, racTop);
-console.log($raccoon)
-
-      if (racBottom >= carTop && racRight >= carLeft) {
-      
-      //(racPosition.top > $car.bottom || racPosition.right < $car.left || racPosition.bottom < $car.top || racPosition.left > $car.right)
-    
-       return true;
-     
-      }
-    
-     return false;
-
+    let carTop = $car.position().top;
+    let carLeft = $car.position().left;
+    let carBottom = carTop + $car.height();
+    let carRight = carLeft + $car.width();
+    let racTop = $raccoon.position().top;
+    let racLeft = $raccoon.position().left;
+    let racBottom = racTop + $raccoon.height();
+    let racRight = racLeft + $raccoon.width();
+    if (racBottom >= carTop && racRight >= carLeft) {
+        return true;
     }
-    isCollided = testCollision($car);
- //       console.log(isCollided, "COLLIDED");
-
+    return false;
 }
-
-setInterval( () => {
+setInterval(() => {
+    console.log("checking for collisions")
      if(checkingCollision()){
-        alert ("CRASH")
+        console.log("CRASH");
     }
-}
-, 100)
+}, 100)
 
 
-   
+
+// **Analysis**
+// CRASH is being run whenever the obstacle crosses above raccoon and hits the Y axis, bottem clear for now. 
+// => need to fix CRASH 
+// => need to establish prompt to freeze game once CRASH occurs 
+
+
+
+
+
+
 
 // function to run and when 
 
