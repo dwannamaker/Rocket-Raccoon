@@ -7,7 +7,11 @@ body{
     place-items: center;
     margin: 0;
     padding: 0;
-    background: grey;
+    background-image: ("/Users/admin/Desktop/DW Docs/Coding/Rocket Raccoon Project/Backgrounds/rrb11.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100%;
   }
 
    .container {
@@ -18,7 +22,15 @@ body{
     height: 350px;
     position: relative;
     margin: auto;
+
   } 
+
+  .img {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    margin: auto;
+  }
 
   .raccoon {
     height: 35px;

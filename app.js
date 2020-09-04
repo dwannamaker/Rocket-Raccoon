@@ -11,28 +11,28 @@ const $raccoon = $(".raccoon").first()
 
 // read about jquery Position
 // need a default position (like in css with top) established in jquery
+function checkKey(event) {
 
+    if(event.originalEvent.keyCode === upArrow) {
+    //    console.log("Hello! I am the UP arrow!")
+    //    console.log($raccoon.position());
+        if(position > 0) {
+             $(".raccoon").css("top", `${position-=20}px`)
+        }
+        
+    }
+
+    if(event.originalEvent.keyCode === downArrow) {
+    //    console.log("Hello! I am the DOWN arrow!")
+    //    console.log($raccoon.position());
+        if(position < 300) {
+            $(".raccoon").css("top", `${position+=20}px`)
+        }
+    }
+}
 
 function moveRaccoon() {
-    $("body").on("keydown", function(event) {
-
-        if(event.originalEvent.keyCode === upArrow) {
-        //    console.log("Hello! I am the UP arrow!")
-        //    console.log($raccoon.position());
-            if(position > 0) {
-                 $(".raccoon").css("top", `${position-=20}px`)
-            }
-            
-        }
-
-        if(event.originalEvent.keyCode === downArrow) {
-        //    console.log("Hello! I am the DOWN arrow!")
-        //    console.log($raccoon.position());
-            if(position < 300) {
-                $(".raccoon").css("top", `${position+=20}px`)
-            }
-        }
-    })
+    $("body").on("keydown", checkKey)
 }
 
 $(document).ready(moveRaccoon);
@@ -62,21 +62,27 @@ function checkingCollision() {
     let racLeft = $raccoon.position().left;
     let racBottom = racTop + $raccoon.height();
     let racRight = racLeft + $raccoon.width();
-    if (racBottom >= carTop && racRight >= carLeft) {
+    if (racBottom >= carTop && racRight >= carLeft && racTop <= carBottom) {
         return true;
     }
         return false;
 }
 
-setInterval(() => {
+const interval = setInterval(() => {
     console.log("checking for collisions")
      if(checkingCollision()){
          console.log("CRASH");
     //    $(".container").freeze($(".container"));    
-    alert ("CRASH - GAME OVER")
-    document.location.reload();
+  //  alert ("CRASH - GAME OVER")
+  //  document.location.reload();
     clearInterval(interval);
+    clearInterval(movingCar);
+    $("body").off("keydown", checkKey);
+    
 
+
+
+    
     }
 }, 100)
 
@@ -168,7 +174,7 @@ setInterval(() => {
 
 
 
-setInterval(() => {
+const movingCar = setInterval(() => {
     $(".car").eq(0).remove();
     console.log("testing to check random obstacle generation");
     $("<div>").addClass("car").css("top", Math.floor(Math.random() * 90) + "%").appendTo($(".container"));
